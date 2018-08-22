@@ -8,6 +8,15 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+                <link rel="stylesheet" href="css/custom.css">
+                <link rel="stylesheet" href="node_modules/fontawesome/fontawesome-free/css/all.css">
+
+<!--
+ 		Enable this for online fontawesome
+
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+-->
+
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,10 +33,243 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+<section>
+	<h1>Beyond Module Security Updates</h1>
+	<br />
+	<h4>How to Really Secure Your Drupal Sites</h4>
+	<p>
+		<br /><small>Presentation by Greg Schnippel at Drupal GovCon, August 22nd, 2018</small>
+	</p>
+</section>
+
+<section id="fragments">
+	<section>
+		<h1>INTRODUCTION</h1>
+	</section>
+  <section>
+		<h2>Introduction</h2>
+		<div class="container">
+	    <div class="col">
+				<img src="images/placeholder.png">
+	    </div>
+
+	    <div class="col">
+				<p>There's different types of fragments, like:</p>
+				<p class="fragment grow">grow</p>
+				<p class="fragment shrink">shrink</p>
+				<p class="fragment fade-out">fade-out</p>
+	    </div>
+	  </div>
+  </section>
+	<section>
+		<h2>GOALS</h2>
+		<ul>
+			<li class="fragment">How to Approach Security</li>
+			<li class="fragment">Security Baseline</li>
+			<li class="fragment">Layers of Security</li>
+			<li class="fragment">Recommendations</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section data-background="#fff">
+		<h1>HOW TO APPROACH SECURITY</h1>
+	</section>
+  <section>
+    <h2>Key Questions</h2>
+		<ul>
+			<li class="fragment shrink">What is the threat and what is my risk tolerance level?</li>
+			<li class="fragment shrink">What security measures can I implement to mitigate these risks?</li>
+			<li class="fragment grow">What costs / complexity will they introduce?</li>
+			<li class="fragment grow">How will my users respond?</li>
+    </ul>
+	</section>
+	<section>
+    <img src="images/hackers-slide.png">
+		<aside class="notes">
+			Assume every website is a target of opportunity as hackers are interested primarily in acquiring resources.
+		</aside>
+	</section>
+	<section>
+		<h2>Motivations</h2>
+		<ul>
+			<li class="fragment">Graffiti</li>
+			<li class="fragment">Spam</li>
+			<li class="fragment">Botnet</li>
+			<li class="fragment">Bitcoin Mining</li>
+			<li class="fragment">User / Financial Data</li>
+			<li class="fragment">Targeted attack / DDOS</li>
+		</ul>
+		<aside class="notes">
+			Hackers have many motivations for attempting to gain control of a website but we're going to be focused primarily on just the targets of opportunity.
+		</aside>
+	</section>
+	<section>
+    <img src="images/mining-exploits.png">
+		<p>
+			Source: <a href="https://pantheon.io/blog/drupal-sa-2018-002-weaponized-coin-mining-exploits-wild">Pantheon "Drupal SA-2018-002 Weaponized: Coin Mining Exploits in the Wild"</a>
+		</p>
+		<aside class="notes">
+			As an example, in this blog post from Pantheon, they show the frequency of bitcoin mining attacks, mere hours after the release of the Drupal-SA-002-2018 Drupalgeddon vulnerability.
+		</aside>
+	</section>
+
+</section>
+
+<section>
+	<section data-background="#fff">
+		<h1>BASELINE</h1>
+	</section>
+
+	<section>
+		<h2>1. Keep up with Updates</h2>
+    <div class="fragment"><img width=500 src="images/waitaminute.gif"></div>
+	</section>
+
+	<section data-background="#fff">
+		<h2>2. Use HTTPS</h2>
+		<div class="container">
+	    <div class="col">
+				<img src="images/letsencrypt.png">
+	      <A href="https://www.letsencrypt.org">LetsEncrypt.org</a>
+	    </div>
+
+	    <div class="col">
+				<img src="images/cloudflare.png">
+	      <A href="https://www.cloudflare.com">Cloudflare</a>
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+		<h2>3. File Permissions</h2>
+		<pre><code class="shell" data-trim contenteditable>
+			[root@localhost]cd /path_to_drupal_installation
+			[root@localhost]chown -R greg:www-data .
+			[root@localhost]find . -type d -exec chmod u=rwx,g=rx,o= '{}' \;
+			[root@localhost]find . -type f -exec chmod u=rw,g=r,o= '{}' \;
+		</code></pre>
+		<pre><code class="shell" data-trim contenteditable>
+			[root@localhost]cd /path_to_drupal_installation/sites
+			[root@localhost]find . -type d -name files -exec chmod ug=rwx,o= '{}' \;
+			[root@localhost]for d in ./*/files
+			do
+			   find $d -type d -exec chmod ug=rwx,o= '{}' \;
+			   find $d -type f -exec chmod ug=rw,o= '{}' \;
+			done
+	  </code></pre>
+		<p>Securing file permissions and ownership</br /><a href="https://www.drupal.org/node/244924">https://www.drupal.org/node/244924</a></p>
+	</section>
+
+	<section>
+		<h2>4. Have Reliable Backups</h2>
+		<p class="fragment">Offline Backups</p>
+		<p class="fragment">Version Control (ex. Git)</p>
+	</section>
+
+	<section>
+		<h2>5. Monitor and Scan</h2>
+		<p class="fragment">Offline Backups</p>
+		<p class="fragment">Version Control (ex. Git)</p>
+	</section>
+
+	<section>
+		<h2>BASELINE</h2>
+	  <ol>
+			<li class="fragment grow">Keep up with All Updates</li>
+	    <li class="fragment grow">Monitor and Scan</li>
+	    <li class="fragment grow">Eliminate Unused Components</li>
+			<li>Use HTTPs</li>
+			<li>File Permissions</li>
+			<li>Have Reliable Backups</li>
+		</ol>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h1>Layers of Security</h1>
+	</section>
+	<section>
+    <h3>Physical & </h3>
+		<h3>Personnel</h3>
+	</section>
+	<section>
+		<h3>Network</h3>
+		<h1><span class="fa fa-institution"></span></h1>
+	</section>
+	<section>
+		<h3>Server</h3>
+	</section>
+	<section>
+		<h3>Headers</h3>
+	</section>
+	<section>
+		<h3>PHP</h3>
+	</section>
+	<section>
+		<h3>Code</h3>
+	</section>
+	<section>
+		<h3>Database</h3>
+	</section>
+	<section>
+		<h3>Drupal Site</h3>
+	</section>
+	<section>
+		<h3>User Content</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Network</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Server</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Headers</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>PHP</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Code</h3>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Database</h3>
+	</section>
+	<section>
+		<h3>Modifying Table Prefix</h3>
+    <img src="images/table_prefix.png">
+	</section>
+</section>
+<section>
+	<section>
+		<h3>Drupal Site</h3>
+		<h1><span class="fa fa-institution"></span></h1>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>User Content</h3>
+		<h1><span class="fa fa-institution"></span></h1>
+	</section>
+</section>
 			</div>
 		</div>
+
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
