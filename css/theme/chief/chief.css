@@ -278,3 +278,7 @@ body:after {
 @media print {
   .backgrounds {
     background-color: #222; } }
+
+.fa-star { 
+  color: gold;
+}
