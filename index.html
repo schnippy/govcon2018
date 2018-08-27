@@ -72,6 +72,10 @@
 		</aside>
 	</section>
 	<section>
+		<img src="images/vulnerabilities.jpg">
+		<small>Source: CVE Details, <a href="https://www.cvedetails.com/vendor/1367/Drupal.html">https://www.cvedetails.com/vendor/1367/Drupal.html</a></small>
+	</section>
+	<section>
 		<img src="images/iwanttobescared.webp" width=1000><br />
 		<small>Source: <a href="http://map.norsecorp.com/">http://map.norsecorp.com</a></small>
 	</section>
@@ -423,9 +427,8 @@
 			<h3><i class="fas fa-server"></i>&nbsp;&nbsp; Server</h3>
 			<p><i>Installing open source rootkit / virus scanners</i></p>
       <p><b><a href="http://www.chkrootkit.org">chrootkit</a></b> or <b><a href="rkhunter.org">rkhunter</a></b></p>
-			
+			<img src="images/rkhunter.jpg">
 		</section>
-	</section>
 	<section>
 		<h3><i class="fas fa-server"></i>&nbsp;&nbsp; Server</h3>
 		<p><i>Server Security Rules</i></p>
@@ -501,11 +504,102 @@
 <section>
 	<section>
 		<h3><i class="fab fa-php" style="color: #8892be"></i>&nbsp;&nbsp; PHP</h3>
+		<p><i>Setting PHP open_basedir</i></p>
+    <p>Restrict execution of files to your web root to protect the rest of the server.</p>
+		<pre><code class="shell" data-trim contenteditable>open_basedir: /var/www/vhosts/my_site </code></pre>
+		<table>
+			<tbody>
+				<tr>
+					<td>Setup</td>
+					<td>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 </section>
 <section>
 	<section>
 		<h3><i class="fas fa-file-code"></i>&nbsp;&nbsp; Code</h3>
+		<p><i>Reviewing Code </i></p>
+		<p><a href="https://www.drupal.org/project/security_review">Security Review</a> module: All-in-one security scanning toolkit with code security parser.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>36,146 / 387,406</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section>
+		<h3><i class="fas fa-file-code"></i>&nbsp;&nbsp; Code</h3>
+		<p><i>Reviewing Code </i></p>
+		<p><a href="https://www.drupal.org/project/paranoia">Paranoia</a> module: Hard disables the use of the "PHP filter" and blocks other risky permission changes</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>6,395 / 97,107</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section>
+		<h3><i class="fas fa-file-code"></i>&nbsp;&nbsp; Code</h3>
+		<p><i>Reviewing Code </i></p>
+		<p><a href="https://www.drupal.org/project/hacked">Hacked</a> module: Scans existing contrib modules and core codebase to determine what has been modified</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>16,777 / 213,578</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 </section>
 <section>
@@ -575,26 +669,132 @@
 <section>
 	<section>
 		<h2><i class="fab fa-drupal" style="color: #0077c0"></i>&nbsp;&nbsp;Drupal Site</h2>
-		<h3><i>Limit User Sessions</i></h3>
-		<p><b>Autologout (7.x, 8.x)</b></p>
-		<p><i>36,120 Installs / 263,970 DLs</i></p>
-		<p>This module provides a site administrator the ability to log users out after a specified time of inactivity.</p>
-		<p><a href="https://www.drupal.org/project/autologout">https://www.drupal.org/project/autologout</a></p>
+		<p><i>Limit User Sessions</i></p>
+		<p><a href="https://www.drupal.org/project/autologout">Autologout</a> module: provides a site administrator the ability to log users out after a specified time of inactivity.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>36,120 / 263,970</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<section>
 		<h2><i class="fab fa-drupal" style="color: #0077c0"></i>&nbsp;&nbsp;Drupal Site</h2>
-		<h3><i>Limit User Sessions</i></h3>
-		<h5>Session Limit (7.x, 8.x)</h5>
-		<small><i>20,601 Installs / 98,878 DLs</i></small>
-		<p>Session Limit allows administrators to limit the number of simultaneous sessions per user.</p>
-		<p><a href="https://www.drupal.org/project/session_limit">https://www.drupal.org/project/session_limit</a></p>
+		<p><i>Limit User Sessions</i></p>
+		<p><a href="https://www.drupal.org/project/session_limit">Session Limit</a> module: allows administrators to limit the number of simultaneous sessions per user.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>20,601 / 98,878</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>		
+	</section>
+	<section>
+		<h2><i class="fab fa-drupal" style="color: #0077c0"></i>&nbsp;&nbsp;Drupal Site</h2>
+		<p><i>Password Policy</i></p>
+		<p><a href="https://www.drupal.org/project/password_policy">Password Policy</a> module: Allows administrators to set specific password requirements.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>20,601 / 98,878</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>		
 	</section>
 </section>
 <section>
 	<section>
 		<h3><i class="fas fa-users-cog"></i>&nbsp;&nbsp;User Generated Content</h3>
-
+		<p><i>Captcha</i></p>
+		<p><a href="https://www.drupal.org/project/captcha">Captcha</a> module: Implements checks to prevent malicious or automated user content.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Usage</td>
+					<td>280,779 / 2,294,458</td>
+				</tr>
+				<tr>
+					<td>Setup</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>Complexity</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+				<tr>
+					<td>User Balance</td>
+					<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+				</tr>
+			</tbody>
+		</table>		
 	</section>
+	<section>
+		<h3><i class="fas fa-users-cog"></i>&nbsp;&nbsp;User Generated Content</h3>
+	<p><i>Block All User Input</i></p>
+	<p class="fragment">Leave your email and your donation / purchase and leave.</p>
+	<table class="fragment">
+		<tbody>
+			<tr>
+				<td>Sleep</td>
+				<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+			</tr>
+			<tr>
+				<td>Job Satisfaction</td>
+				<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+			</tr>
+			<tr>
+				<td>User Trolling</td>
+				<td><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></td>
+			</tr>
+		</tbody>
+	</table>		
+  </section>
+</section>
+<section>
+	<h1>THANK YOU!!</h1>
+	<p>Slides: <a href="http://github.com/schnippy/govcon2018">http://github.com/schnippy/govcon2018</a></p>
+	<p>Twitter: <a href="http://twitter.com/schnippy">schnippy</a></p>
 </section>
 			</div>
 		</div>
